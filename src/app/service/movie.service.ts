@@ -11,8 +11,14 @@ export class MovieService {
 
     constructor(private http: HttpClient) { }
 
+    // Service functions
+    // get all movies
     getAll(): Observable<Movie[]> {
         return this.http.get(URL+'/') as Observable<Movie[]>; 
     }
 
+    // create a movie
+    create(movie: Movie): Observable<Movie> {
+        return this.http.post(URL+'/', movie) as Observable<Movie>; 
+    }
 }
