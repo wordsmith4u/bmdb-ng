@@ -1,0 +1,20 @@
+<app-menu></app-menu>
+<section class = "heading">
+    <span class = "page-title font-weight-bold font-italic"> [{{title}}]</span>
+</section>
+<table class="table table-sm table-striped">
+    <thead>
+    <tr>
+        <th>ID</th><th>Actor ID</th><th>Movie ID</th><th>Roll</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor= 'let credit of credits'>
+        <td>{{credit.id}}</td>
+        <td>{{credit.actorID}}</td>
+        <td>{{credit.movieID}}</td>
+        <td>{{credit.Roll}}</td>
+        <td>Detail | Edit</td>
+    </tr>
+    </tbody>
+</table>
