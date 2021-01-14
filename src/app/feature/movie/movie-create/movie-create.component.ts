@@ -16,9 +16,7 @@ export class MovieCreateComponent implements OnInit {
   constructor(private movieSvc: MovieService, private router: Router) { }
 
   ngOnInit(): void {
-
-  } 
-  
+  }  
   save() {
     // save the movie to the database
     this.movieSvc.create(this.movie).subscribe(
@@ -30,7 +28,7 @@ export class MovieCreateComponent implements OnInit {
       },
       err => {
         console.log(err);
-      }
+       }
     );
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ActorService } from 'src/app/service/actor.service';
 import { Actor } from '../../../model/actor.class';
  
@@ -12,7 +13,7 @@ export class ActorCreateComponent implements OnInit {
   actor: Actor = new Actor();
   submitBtnTitle = "Create";
 
-  constructor(private actorSvc: ActorService) { }
+  constructor(private actorSvc: ActorService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,10 +23,12 @@ export class ActorCreateComponent implements OnInit {
       resp => {
         this.actor = resp as Actor;
         console.log('Actor created', this.actor);
+        // forward to the actor-list component
+        this.router.navigateByUrl("/actor-list");
       },
       err => {
         console.log(err);
-      }
+       }
     );
   }
 

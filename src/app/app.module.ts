@@ -12,6 +12,8 @@ import { ActorCreateComponent } from './feature/actor/actor-create/actor-create.
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { CreditListComponent } from './feature/credit/credit-list/credit-list.component';
+import { MovieEditComponent } from './feature/movie/movie-edit/movie-edit.component';
+import { MovieDetailComponent } from './feature/movie/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CreditListComponent } from './feature/credit/credit-list/credit-list.co
     ActorCreateComponent,
     NoComponentDefinedComponent,
     MenuComponent,
-    CreditListComponent
+    CreditListComponent,
+    MovieEditComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,

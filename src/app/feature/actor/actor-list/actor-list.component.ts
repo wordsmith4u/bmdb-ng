@@ -14,7 +14,6 @@ export class ActorListComponent implements OnInit {
   constructor(private actorSvc: ActorService) { }
 
   ngOnInit(): void {
-    console.log("hi");
     // populate list of actor
     this.actorSvc.getAll().subscribe(
       resp => {
