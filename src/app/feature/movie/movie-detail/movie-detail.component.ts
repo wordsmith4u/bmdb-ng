@@ -22,7 +22,7 @@ export class MovieDetailComponent implements OnInit {
         this.movieId = parms['id'];
         console.log(this.movieId);
       }
-    );
+     );
 
     // get the movie by ID
     this.movieSvc.getById(this.movieId).subscribe(

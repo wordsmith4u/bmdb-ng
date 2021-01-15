@@ -2,38 +2,38 @@
 <section class="heading">
     <span class='component-title'>[{{title}}]</span>
   </section>
-  <main *ngIf = 'movie' class="single">
+  <main *ngIf = 'actor' class="single">
     <table class="table table-sm">
       <tr>
         <td>
-            Title:
+            First Name:
         </td>
         <td>
-            <input [(ngModel)]="movie.title" class="rounded" type="text">
-        </td>
-      </tr>
-      <tr>
-        <td>
-            Year:
-        </td>
-        <td>
-            <input [(ngModel)]="movie.year" class="rounded" type="text">
+            <input [(ngModel)]="actor.firstName" class="rounded" type="text">
         </td>
       </tr>
       <tr>
         <td>
-            Rating:
+            Last Name:
         </td>
         <td>
-            <input [(ngModel)]="movie.rating" class="rounded" type="text">
+            <input [(ngModel)]="actor.lastName" class="rounded" type="text">
         </td>
       </tr>
       <tr>
         <td>
-            Director:
+            Gender:
         </td>
         <td>
-            <input [(ngModel)]="movie.director" class="rounded" type="text">
+            <input [(ngModel)]="actor.gender" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            Birthdate:
+        </td>
+        <td>
+            <input [(ngModel)]="actor.birthDate" class="rounded" type="text">
         </td>
       </tr>
     </table>
@@ -42,3 +42,4 @@
   <!--
   <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Back</button></span>
   -->
+
