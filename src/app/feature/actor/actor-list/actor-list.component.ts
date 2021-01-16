@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Actor } from '../../../model/actor.class';
-import { ActorService } from '../../../service/actor.service';
+import { Actor } from 'src/app/model/actor.class';
+import { ActorService } from 'src/app/service/actor.service';
 
 @Component({
   selector: 'app-actor-list',
@@ -14,17 +14,16 @@ export class ActorListComponent implements OnInit {
   constructor(private actorSvc: ActorService) { }
 
   ngOnInit(): void {
-    // populate list of actor
+    // populate list of actors
     this.actorSvc.getAll().subscribe(
       resp => {
         this.actors = resp as Actor[];
-        console.log('Actors', this.actors);
+        console.log('Actors',this.actors);
       },
       err => {
         console.log(err);
       }
     );
-
   }
 
 }

@@ -1,6 +1,6 @@
+import { MovieService } from './../../../service/movie.service';
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../../../model/movie.class';
-import { MovieService } from '../../../service/movie.service';
+import { Movie } from 'src/app/model/movie.class';
 
 @Component({
   selector: 'app-movie-list',
@@ -14,18 +14,18 @@ export class MovieListComponent implements OnInit {
   constructor(private movieSvc: MovieService) { }
 
   ngOnInit(): void {
-    // populate list of movies
+    // populate the list of movies
     this.movieSvc.getAll().subscribe(
       resp => {
         this.movies = resp as Movie[];
-        console.log('Movies', this.movies);
+        console.log('Movies',this.movies);
       },
       err => {
         console.log(err);
       }
     );
-
-   }
+  }
 
 }
+
  

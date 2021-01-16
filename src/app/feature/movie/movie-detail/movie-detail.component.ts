@@ -13,42 +13,41 @@ export class MovieDetailComponent implements OnInit {
   movie: Movie = null;
   movieId: number = 0;
 
-  constructor(private movieSvc: MovieService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private movieSvc: MovieService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // get the ID from the URL
+    //get the id from the url
     this.route.params.subscribe(
-      parms => {
-        this.movieId = parms['id'];
-        console.log(this.movieId);
-      }
-     );
-
-    // get the movie by ID
+      parms => {this.movieId = parms['id'];
+      console.log("MovieID = "+this.movieId);
+    }
+    );
+    //get movie by id
     this.movieSvc.getById(this.movieId).subscribe(
       resp => {
         this.movie = resp as Movie;
-        console.log('Movie', this.movie);
+        console.log('Movie',this.movie);
       },
       err => {
         console.log(err);
       }
     );
-
   }
   delete() {
-    // delete the movie to the database
+    // save the movie to the DB
     this.movieSvc.delete(this.movie.id).subscribe(
       resp => {
         this.movie = resp as Movie;
-        console.log('Movie deleted', this.movie);
-        // forward to the movie-list component
+        console.log('Movie deleted',this.movie);
+        // forward to the movie list component
         this.router.navigateByUrl("/movie-list");
       },
       err => {
         console.log(err);
       }
+
     );
   }
-
 }

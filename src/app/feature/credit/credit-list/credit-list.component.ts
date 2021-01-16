@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Credit } from '../../../model/credit.class';
-import { CreditService } from '../../../service/credit.service';
+import { Credit } from 'src/app/model/credit.class';
+import { CreditService } from 'src/app/service/credit.service';
 
 @Component({
   selector: 'app-credit-list',
@@ -10,11 +10,9 @@ import { CreditService } from '../../../service/credit.service';
 export class CreditListComponent implements OnInit {
   title = "Credit List";
   credits: Credit[] = [];
-
   constructor(private creditSvc: CreditService) { }
 
   ngOnInit(): void {
-    console.log("hi");
     // populate list of credits
     this.creditSvc.getAll().subscribe(
       resp => {
@@ -25,7 +23,6 @@ export class CreditListComponent implements OnInit {
         console.log(err);
       }
     );
-
   }
 
 }
