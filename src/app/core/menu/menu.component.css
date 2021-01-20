@@ -28,3 +28,5 @@ img {
     max-width:4%;
     max-height:4%;
 }
+#client_logos { display: inline-block; }
+

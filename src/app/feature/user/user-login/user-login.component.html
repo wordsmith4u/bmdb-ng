@@ -8,7 +8,9 @@
           1px 1px 0 #000,
           1px -1px 0 #000,
           -1px -1px 0 #000
-      };
+      }
+
+      ;
 
       p {
         text-align: center;
@@ -30,7 +32,7 @@
         </tr>
         <tr>
           <td>Username:</td>
-          <td><input [(ngModel)]='user.userName' name='UserName' type='text'></td>
+          <td><input [(ngModel)]='user.userName' name='Username' type='text'></td>
         </tr>
         <tr>
           <td>Password:</td>
@@ -45,6 +47,20 @@
         </tr>
       </table>
     </form>
+  </div>
+  <div id="client_logos">
+    <style>
+      img {
+        border: 5px solid rgb(160, 110, 110);
+      }
+    </style>
+
+    <img style="display: inline; margin: 0 5px;" title="carpet" src="assets/carpet.png" alt="" width="200"
+      height="150" />
+    <img style="display: inline; margin: 0 5px;" title="oscar" src="assets/oscar.png" alt="" width="200" height="150"/>
+    <img style="display: inline; margin: 0 5px;" title="sign" src="assets/sign.png" alt="" width="200" height="150" />
+    <img style="display: inline; margin: 0 5px;" title="star" src="assets/star.png" alt="" width="200" height="150" />
+    <img style="display: inline; margin: 0 5px;" title="film" src="assets/film.png" alt="" width="200" height="150" />
   </div>
 
 </body>
