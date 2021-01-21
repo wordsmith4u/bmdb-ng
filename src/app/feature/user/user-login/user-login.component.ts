@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/model/user.class';
 import { UserService } from 'src/app/service/user.service';
+import { SystemService } from 'src/app/service/system.service';
 
 @Component({
   selector: 'app-user-login',
@@ -15,6 +16,7 @@ export class UserLoginComponent implements OnInit {
   user: User = new User();
 
   constructor(private userSvc: UserService,
+              private sysSvc: SystemService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class UserLoginComponent implements OnInit {
         else {
           this.user = resp as User;
           console.log("Successful login!",this.user);
+          this.sysSvc.loggedInUser = this.user;
           this.router.navigateByUrl('/movie-list');
         }
       },
