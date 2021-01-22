@@ -10,13 +10,16 @@ export class SystemService {
 
   constructor(private router: Router) { }
 
-  //isAdmin(): boolean {
-    //return (this.loggedInUser == null) ? false : this.loggedInUser.admin;
-  //}
+  // not applicable for bmdb-ng as there is no 'admin' property on user
+  // isAdmin(): boolean {
+  //   return (this.loggedInUser == null) ? false : this.loggedInUser.admin;
+  // }
 
-  checkLogin(): void{
+  checkLogin(): void {
+    // if user is not logged in, send to login page
+    // comment out this code for testing purposes
     if (this.loggedInUser == null) {
-      console.log("User is not logged in...redirecting to login.");
+      console.log("User is not logged in... redirecting to login.");
       this.router.navigateByUrl("/user-login");
     }
   }

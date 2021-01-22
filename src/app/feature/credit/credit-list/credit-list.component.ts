@@ -1,7 +1,7 @@
+import { SystemService } from './../../../service/system.service';
 import { Component, OnInit } from '@angular/core';
 import { Credit } from 'src/app/model/credit.class';
 import { CreditService } from 'src/app/service/credit.service';
-import { SystemService } from 'src/app/service/system.service';
 
 @Component({
   selector: 'app-credit-list',
@@ -11,11 +11,11 @@ import { SystemService } from 'src/app/service/system.service';
 export class CreditListComponent implements OnInit {
   title = "Credit List";
   credits: Credit[] = [];
- 
-  constructor(private creditSvc: CreditService,  private sysSvc: SystemService) { }
+  constructor(private creditSvc: CreditService,
+              private sysSvc: SystemService) { }
 
   ngOnInit(): void {
-    console.log('movie list - loggedInUser?', this.sysSvc.loggedInUser);
+    console.log('credit list: loggedInUser?',this.sysSvc.loggedInUser);
     // populate list of credits
     this.creditSvc.getAll().subscribe(
       resp => {
@@ -29,3 +29,4 @@ export class CreditListComponent implements OnInit {
   }
 
 }
+
