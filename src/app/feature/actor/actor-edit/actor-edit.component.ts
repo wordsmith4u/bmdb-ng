@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Actor } from 'src/app/model/actor.class';
 import { ActorService } from 'src/app/service/actor.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-actor-edit',
@@ -14,7 +15,7 @@ export class ActorEditComponent implements OnInit {
   actorId: number = 0;
   submitBtnTitle = "Save";
 
-  constructor(private actorSvc: ActorService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private actorSvc: ActorService, private router: Router, private route: ActivatedRoute, private loc: Location) { }
 
   ngOnInit(): void {
     // get the ID from the URL
@@ -51,5 +52,8 @@ export class ActorEditComponent implements OnInit {
       }
     );
   }
-
-}
+    backClicked() {
+      this.loc.back();
+    }
+  
+  }

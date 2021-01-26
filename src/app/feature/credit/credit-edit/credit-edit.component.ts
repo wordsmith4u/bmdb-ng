@@ -6,6 +6,7 @@ import { Movie } from 'src/app/model/movie.class';
 import { ActorService } from 'src/app/service/actor.service';
 import { CreditService } from 'src/app/service/credit.service';
 import { MovieService } from 'src/app/service/movie.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-credit-edit',
@@ -24,6 +25,7 @@ export class CreditEditComponent implements OnInit {
               private actorSvc: ActorService,
               private movieSvc: MovieService,
               private router: Router,
+              private loc: Location,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -84,4 +86,8 @@ export class CreditEditComponent implements OnInit {
   compMovie(a: Movie, b: Movie): boolean {
     return a && b && a.id === b.id;
   }
+  backClicked() {
+    this.loc.back();
+  }
+
 }

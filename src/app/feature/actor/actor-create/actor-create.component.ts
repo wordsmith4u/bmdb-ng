@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActorService } from 'src/app/service/actor.service';
 import { Actor } from '../../../model/actor.class';
+import { Location } from '@angular/common';
  
 @Component({
   selector: 'app-actor-create',
@@ -12,8 +13,9 @@ export class ActorCreateComponent implements OnInit {
   title = "Actor Create";
   actor: Actor = new Actor();
   submitBtnTitle = "Create";
+  
 
-  constructor(private actorSvc: ActorService, private router: Router) { }
+  constructor(private actorSvc: ActorService, private router: Router, private loc: Location) { }
 
   ngOnInit(): void {
   }
@@ -28,8 +30,12 @@ export class ActorCreateComponent implements OnInit {
       },
       err => {
         console.log(err);
-       }
-    );
-  }
+      }
 
-}
+      );
+    }
+    backClicked() {
+      this.loc.back();
+    }
+  
+  }

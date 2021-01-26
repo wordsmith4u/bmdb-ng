@@ -1,1 +1,58 @@
-<p>user-edit works!</p>
+<app-menu></app-menu>
+<section class="heading">
+  <span class='component-title'>[{{title}}]</span>
+</section>
+<main *ngIf='user' class="single">
+  <table class="table table-sm">
+    <tr>
+      <td>
+          Username:
+      </td>
+      <td>
+          <input [(ngModel)]="user.userName" class="rounded" type="text">
+      </td>
+    </tr>
+    <tr>
+        <td>
+            First Name:
+        </td>
+        <td>
+            <input [(ngModel)]="user.firstName" class="rounded" type="text">
+        </td>
+      </tr>
+    <tr>
+      <td>
+          Last Name:
+      </td>
+      <td>
+          <input [(ngModel)]="user.lastName" class="rounded" type="text">
+      </td>
+    </tr>
+    <tr>
+      <td>
+          Phone:
+      </td>
+      <td>
+          <input [(ngModel)]="user.phoneNumber" class="rounded" type="text">
+      </td>
+    </tr>
+    <tr>
+      <td>
+          Email:
+      </td>
+      <td>
+          <input [(ngModel)]="user.email" class="rounded" type="date">
+      </td>
+    </tr>
+    <tr>
+        <td>
+            CollectionValue:
+        </td>
+        <td>
+            <input [(ngModel)]="user.collectionValue" class="rounded" type="date">
+        </td>
+      </tr>
+  </table>
+</main>
+<span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span> |
+<span><button (click)="backClicked()" class="btn btn-sm btn-primary">Back</button></span>

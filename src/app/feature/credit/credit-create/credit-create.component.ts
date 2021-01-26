@@ -6,6 +6,7 @@ import { Movie } from 'src/app/model/movie.class';
 import { ActorService } from 'src/app/service/actor.service';
 import { CreditService } from 'src/app/service/credit.service';
 import { MovieService } from 'src/app/service/movie.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-credit-create',
@@ -22,6 +23,7 @@ export class CreditCreateComponent implements OnInit {
   constructor(private creditSvc: CreditService,
               private actorSvc: ActorService,
               private movieSvc: MovieService,
+              private loc: Location,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -61,4 +63,8 @@ export class CreditCreateComponent implements OnInit {
 
     );
   }
-}
+    backClicked() {
+      this.loc.back();
+    }
+  
+  }
